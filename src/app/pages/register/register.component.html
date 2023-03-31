@@ -3,19 +3,19 @@
         <div class="col-md-6">
             <div class="card shadow-lg p-5 mt-5 mb-5 text-center">
                 <h2>Create User Account</h2><hr>
-                <div class="alert alert-success" role="alert">
-                    Account has been created successfully!<a routerLink="/login" style="cursor: pointer;">Login</a>
+                <div [ngClass]="className" role="alert">
+                    {{message}}<a routerLink="/login" style="cursor: pointer;">Login</a>
                   </div>
                 <form [formGroup]="signupForm"  style="text-align:left;">
                     <div class="form-group">
                         <label>Name</label>
-                        <input type="text" class="form-control" placeholder="username" formControlName="Username">
+                        <input type="text" class="form-control" placeholder="username" formControlName="name">
                         <label>Email</label>
                         <input type="email" class="form-control" placeholder="E-mail" formControlName="email">
                         <label>Password</label>
                         <input type="password" class="form-control" placeholder="password" formControlName="password">
                         <label>Confirm Password</label>
-                        <input type="password" class="form-control" placeholder="Confirm Password" formControlName="confirmPassword">
+                        <input type="password" class="form-control" placeholder="Confirm Password" formControlName="password_confirmation">
                     </div>
                     <br>
                     <button type="submit" class="btn btn-outline-primary" (click)="signup()">Create Account</button>

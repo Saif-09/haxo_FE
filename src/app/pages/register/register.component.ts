@@ -1,5 +1,6 @@
 import { Component,OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -9,13 +10,16 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class RegisterComponent implements OnInit {
 
   signupForm!:FormGroup;
+  message:string='';
+  className = 'd-none'
+  isProcess :boolean =false;
 
-  constructor(private formBuilder:FormBuilder){
+  constructor(private formBuilder:FormBuilder, private auth:AuthService){
     this.signupForm = this.formBuilder.group({
-      'Username':['', Validators.required],
+      'name':['', Validators.required],
       'email':['',Validators.required],
       'password':['',Validators.required],
-      'confirmPassword':['',Validators.required],
+      'password_confirmation':['',Validators.required],
     })
   }
 
@@ -24,7 +28,28 @@ export class RegisterComponent implements OnInit {
       
   }
   signup(){
-    alert("form has been created")
+    this.isProcess = true;
+    const data = this.signupForm.value;
+    delete data['confirm']
+    this.auth.signup(data).subscribe((res)=>{
+      console.log(res);
+      // alert("User Registration Successfull")
+      if(res.success){
+        this.isProcess = false;
+        this.message = "Account Has Been Created";
+        this.className = 'alert alert-success'
+      }else{
+        this.isProcess = false;
+        this.message = res.message;
+        this.className = 'alert alert-danger'
+      }
+      // this.signupForm.reset();
+    }, err=>{
+      this.isProcess = false;
+        this.message = "Server Error";
+        this.className = 'alert alert-danger'
+    })
+    // alert("form has been created")
   }
 
 }
