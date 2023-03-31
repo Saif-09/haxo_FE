@@ -15,12 +15,16 @@ export class RegisterComponent implements OnInit {
       'Username':['', Validators.required],
       'email':['',Validators.required],
       'password':['',Validators.required],
+      'confirmPassword':['',Validators.required],
     })
   }
 
 
   ngOnInit(): void {
       
+  }
+  signup(){
+    alert("form has been created")
   }
 
 }

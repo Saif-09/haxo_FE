@@ -6,19 +6,19 @@
                 <div class="alert alert-success" role="alert">
                     Account has been created successfully!<a routerLink="/login" style="cursor: pointer;">Login</a>
                   </div>
-                <form [formGroup]="signupForm" class="text-left">
+                <form [formGroup]="signupForm"  style="text-align:left;">
                     <div class="form-group">
                         <label>Name</label>
-                        <input type="text" class="form-control" placeholder="username">
+                        <input type="text" class="form-control" placeholder="username" formControlName="Username">
                         <label>Email</label>
-                        <input type="email" class="form-control" placeholder="E-mail">
+                        <input type="email" class="form-control" placeholder="E-mail" formControlName="email">
                         <label>Password</label>
-                        <input type="password" class="form-control" placeholder="password">
+                        <input type="password" class="form-control" placeholder="password" formControlName="password">
                         <label>Confirm Password</label>
-                        <input type="password" class="form-control" placeholder="Confirm Password">
+                        <input type="password" class="form-control" placeholder="Confirm Password" formControlName="confirmPassword">
                     </div>
                     <br>
-                    <button type="submit" class="btn btn-outline-primary">Create Account</button>
+                    <button type="submit" class="btn btn-outline-primary" (click)="signup()">Create Account</button>
                 </form>
             </div>
         </div>
