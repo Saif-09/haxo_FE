@@ -1,1 +1,28 @@
-<p>navbar works!</p>
+<nav class="navbar bg-primary navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><b>Haxp</b></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link" href="#">Features</a>
+                <a class="nav-link" href="#">Pricing</a>
+                <a class="nav-link disabled">Disabled</a>
+                <div class="form-inline">
+                    <button class="btn btn-dark mr-sm-2" routerLink="/login">Login</button>
+                    <button class="btn btn-dark mx-2 my-sm-0" routerLink="/register">Signup</button>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="form-inline">
+            <div class="mr-sm-2 text-white">Hello,Admin</div>
+            <button class="btn btn-warning my-2 my-sm-0">Logout</button>
+        </div>
+    </div>
+
+</nav>
