@@ -18,10 +18,10 @@ export class AuthService {
 
   }
 
-  getProfile(){
-    let headers = {
-      'Authorization':"Bearer" + localStorage.getItem('token')
+  getProfile():Observable<any>{
+    const headers = {
+      'Authorization':"Bearer " + localStorage.getItem('token')
     }
-    return this.http.get('http://localhost:8000/api/user/loggeduser', {headers:headers})
+    return this.http.get('http://localhost:8000/api/user/loggeduser', {headers:headers});
   }
 }
