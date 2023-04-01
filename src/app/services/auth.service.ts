@@ -6,6 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
+  email!: string;
+  message!: string ;
 
   constructor(private http:HttpClient) { }
 
@@ -24,4 +26,6 @@ export class AuthService {
     }
     return this.http.get('http://localhost:8000/api/user/loggeduser', {headers:headers});
   }
+
+  
 }
