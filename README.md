@@ -1,4 +1,5 @@
-# HaxoFE
+# Authorization in Angular using API calls(Express Js, NodeJS)
+This project is made for authorization services like login, signup and logout
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
 
